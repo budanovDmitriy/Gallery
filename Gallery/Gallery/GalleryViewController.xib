@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AuthViewController" customModule="Gallery" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GalleryViewController" customModule="Gallery" customModuleProvider="target">
             <connections>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -18,22 +18,20 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QkS-Oi-xOP">
-                    <rect key="frame" x="180" y="811" width="54" height="31"/>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="Auth"/>
-                    <connections>
-                        <action selector="authAction:" destination="-1" eventType="touchUpInside" id="wuO-lb-AEl"/>
-                    </connections>
-                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gallleerrtt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gxr-Xc-ch7">
+                    <rect key="frame" x="169.5" y="437.5" width="75.5" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="QkS-Oi-xOP" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="DQR-lf-61G"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="QkS-Oi-xOP" secondAttribute="bottom" constant="20" id="Dad-F7-LeQ"/>
+                <constraint firstItem="Gxr-Xc-ch7" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="8zp-sN-o2Q"/>
+                <constraint firstItem="Gxr-Xc-ch7" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="mQj-hS-LF1"/>
             </constraints>
-            <point key="canvasLocation" x="139" y="98"/>
+            <point key="canvasLocation" x="139" y="78"/>
         </view>
     </objects>
     <resources>

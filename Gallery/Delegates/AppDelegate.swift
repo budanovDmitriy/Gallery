@@ -6,19 +6,22 @@
 //
 
 import UIKit
+import Photos
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
     var window: UIWindow?
 
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
-        let startViewController = AuthViewController()
-        window?.rootViewController = startViewController
         window?.makeKeyAndVisible()
-        return true
+        window?.rootViewController = UINavigationController(rootViewController: AuthViewController())
+        
+        
+           return true
     }
 
     // MARK: UISceneSession Lifecycle

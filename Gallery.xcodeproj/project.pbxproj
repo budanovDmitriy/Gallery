@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C5D1C1F28181E3800D2DCC0 /* extension_AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5D1C1E28181E3800D2DCC0 /* extension_AuthViewController.swift */; };
+		1C5D1C25281826EA00D2DCC0 /* extension_Allert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5D1C24281826EA00D2DCC0 /* extension_Allert.swift */; };
+		1C5D1C272818306100D2DCC0 /* GalleryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5D1C262818306100D2DCC0 /* GalleryViewCell.swift */; };
 		1C82FF532816C38B0057B7AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C82FF522816C38B0057B7AD /* AppDelegate.swift */; };
 		1C82FF552816C38B0057B7AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C82FF542816C38B0057B7AD /* SceneDelegate.swift */; };
-		1C82FF572816C38B0057B7AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C82FF562816C38B0057B7AD /* ViewController.swift */; };
 		1C82FF5C2816C38C0057B7AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C82FF5B2816C38C0057B7AD /* Assets.xcassets */; };
 		1C82FF5F2816C38C0057B7AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C82FF5D2816C38C0057B7AD /* LaunchScreen.storyboard */; };
 		1C82FF682816C4980057B7AD /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C82FF662816C4980057B7AD /* AuthViewController.swift */; };
@@ -19,10 +21,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C5D1C1E28181E3800D2DCC0 /* extension_AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension_AuthViewController.swift; sourceTree = "<group>"; };
+		1C5D1C24281826EA00D2DCC0 /* extension_Allert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension_Allert.swift; sourceTree = "<group>"; };
+		1C5D1C262818306100D2DCC0 /* GalleryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewCell.swift; sourceTree = "<group>"; };
 		1C82FF4F2816C38B0057B7AD /* Gallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C82FF522816C38B0057B7AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C82FF542816C38B0057B7AD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1C82FF562816C38B0057B7AD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1C82FF5B2816C38C0057B7AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1C82FF5E2816C38C0057B7AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1C82FF602816C38C0057B7AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -43,6 +47,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C5D1C20281820E600D2DCC0 /* Gallery */ = {
+			isa = PBXGroup;
+			children = (
+				1C82FF6A2816C9B30057B7AD /* GalleryViewController.swift */,
+				1C5D1C262818306100D2DCC0 /* GalleryViewCell.swift */,
+				1C82FF6B2816C9B40057B7AD /* GalleryViewController.xib */,
+			);
+			path = Gallery;
+			sourceTree = "<group>";
+		};
+		1C5D1C21281820FB00D2DCC0 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				1C82FF662816C4980057B7AD /* AuthViewController.swift */,
+				1C82FF672816C4980057B7AD /* AuthViewController.xib */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		1C5D1C222818213100D2DCC0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1C5D1C1E28181E3800D2DCC0 /* extension_AuthViewController.swift */,
+				1C5D1C24281826EA00D2DCC0 /* extension_Allert.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1C5D1C232818214100D2DCC0 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				1C82FF542816C38B0057B7AD /* SceneDelegate.swift */,
+				1C82FF522816C38B0057B7AD /* AppDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
 		1C82FF462816C38B0057B7AD = {
 			isa = PBXGroup;
 			children = (
@@ -62,13 +103,10 @@
 		1C82FF512816C38B0057B7AD /* Gallery */ = {
 			isa = PBXGroup;
 			children = (
-				1C82FF522816C38B0057B7AD /* AppDelegate.swift */,
-				1C82FF542816C38B0057B7AD /* SceneDelegate.swift */,
-				1C82FF6A2816C9B30057B7AD /* GalleryViewController.swift */,
-				1C82FF6B2816C9B40057B7AD /* GalleryViewController.xib */,
-				1C82FF662816C4980057B7AD /* AuthViewController.swift */,
-				1C82FF672816C4980057B7AD /* AuthViewController.xib */,
-				1C82FF562816C38B0057B7AD /* ViewController.swift */,
+				1C5D1C232818214100D2DCC0 /* Delegates */,
+				1C5D1C21281820FB00D2DCC0 /* Auth */,
+				1C5D1C20281820E600D2DCC0 /* Gallery */,
+				1C5D1C222818213100D2DCC0 /* Extensions */,
 				1C82FF5B2816C38C0057B7AD /* Assets.xcassets */,
 				1C82FF5D2816C38C0057B7AD /* LaunchScreen.storyboard */,
 				1C82FF602816C38C0057B7AD /* Info.plist */,
@@ -148,8 +186,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C5D1C272818306100D2DCC0 /* GalleryViewCell.swift in Sources */,
 				1C82FF682816C4980057B7AD /* AuthViewController.swift in Sources */,
-				1C82FF572816C38B0057B7AD /* ViewController.swift in Sources */,
+				1C5D1C25281826EA00D2DCC0 /* extension_Allert.swift in Sources */,
+				1C5D1C1F28181E3800D2DCC0 /* extension_AuthViewController.swift in Sources */,
 				1C82FF6C2816C9B40057B7AD /* GalleryViewController.swift in Sources */,
 				1C82FF532816C38B0057B7AD /* AppDelegate.swift in Sources */,
 				1C82FF552816C38B0057B7AD /* SceneDelegate.swift in Sources */,
