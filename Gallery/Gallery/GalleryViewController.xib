@@ -17,20 +17,9 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gallleerrtt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gxr-Xc-ch7">
-                    <rect key="frame" x="169.5" y="437.5" width="75.5" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <constraints>
-                <constraint firstItem="Gxr-Xc-ch7" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="8zp-sN-o2Q"/>
-                <constraint firstItem="Gxr-Xc-ch7" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="mQj-hS-LF1"/>
-            </constraints>
+            <gestureRecognizers/>
             <point key="canvasLocation" x="139" y="78"/>
         </view>
     </objects>
