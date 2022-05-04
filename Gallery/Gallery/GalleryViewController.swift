@@ -84,13 +84,12 @@ class GalleryViewController: UIViewController, UICollectionViewDelegate,  UINavi
         
     }
     
-    
-    func saveImage(imageName: String, image: UIImage) {
+    private func saveImage(imageName: String, image: UIImage) {
      guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
         let fileName = imageName
         let fileURL = documentsDirectory.appendingPathComponent(fileName)
+        UserDefaultKeyses.shared.pictureName.append(imageName)
         guard let data = image.jpegData(compressionQuality: 1) else { return }
-
         if FileManager.default.fileExists(atPath: fileURL.path) {
             do {
                 try FileManager.default.removeItem(atPath: fileURL.path)
@@ -98,9 +97,7 @@ class GalleryViewController: UIViewController, UICollectionViewDelegate,  UINavi
             } catch let removeError {
                 print("couldn't remove file at path", removeError)
             }
-
         }
-
         do {
             try data.write(to: fileURL)
         } catch let error {
@@ -108,8 +105,24 @@ class GalleryViewController: UIViewController, UICollectionViewDelegate,  UINavi
         }
 
     }
-
-    func loadImageFromDiskWith(fileName: String) -> UIImage? {
+    
+    func showAlertWithTextField() {
+            let alertController = UIAlertController(title: "Add new picture from internet", message: nil, preferredStyle: .alert)
+            let confirmAction = UIAlertAction(title: "Download", style: .default) { (_) in
+                if let txtField = alertController.textFields?.first, let text = txtField.text {
+                    self.dowloadPictureWithUrl(pictureUrl: text)
+                }
+            }
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
+            alertController.addTextField { (textField) in
+                textField.placeholder = "URL"
+            }
+            alertController.addAction(confirmAction)
+            alertController.addAction(cancelAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
+    
+    private func loadImageFromDiskWith(fileName: String) -> UIImage? {
       let documentDirectory = FileManager.SearchPathDirectory.documentDirectory
         let userDomainMask = FileManager.SearchPathDomainMask.userDomainMask
         let paths = NSSearchPathForDirectoriesInDomains(documentDirectory, userDomainMask, true)
@@ -120,25 +133,37 @@ class GalleryViewController: UIViewController, UICollectionViewDelegate,  UINavi
         }
         return nil
     }
+    
+    private func dowloadPictureWithUrl(pictureUrl:String) {
+        DispatchQueue.global(qos: .userInteractive).async {
+        AF.request( pictureUrl ,method: .get).response { response in
+        switch response.result {
+        case .success(let responseData):
+           self.saveImage(imageName: UUID().uuidString, image: UIImage(data: responseData!, scale:1) ?? UIImage())
+           self.imageArray.append(UIImage(data: responseData!, scale:1) ?? UIImage())
+           self.myCollectionView.reloadData()
+
+        case .failure(let error):
+            print("error--->",error)
+            }
+            }
+        }
+    }
 
     @objc func addPictures() {
-        self.popupAlert(title: "Add pictures", message: "Choose directory", actionTitles: ["Gallery","From file"], actions:[
+        self.popupAlert(title: "Add pictures", message: "Choose directory", actionTitles: ["Gallery","Add picture from internet","Show picture from secret gallery"], actions:[
             { action1 in
-            self.takePhotos()
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            for image in self.imageArray {
-                self.saveImage(imageName: String(image.hashValue), image: image)
-                UserDefaultKeyses.shared.pictureName.append(String(image.hashValue))
-                }
-            }
+            self.openGallery()
         },{ action2 in
+            self.showAlertWithTextField()
+        },{ action3 in
+            self.imageArray.removeAll()
                 for names in UserDefaultKeyses.shared.pictureName {
                     self.imageArray.append(self.loadImageFromDiskWith(fileName: names) ?? UIImage())
                 }
             self.myCollectionView.reloadData()
-        }, nil])
+        },nil])
     }
-    
 }
 
 // MARK: - UICollectionViewDataSource
@@ -173,4 +198,52 @@ extension GalleryViewController: UICollectionViewDelegateFlowLayout {
         return 1.0
     }
 }
+
+private extension GalleryViewController {
+    
+    func openCamera() {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerController.SourceType.camera
+            imagePicker.allowsEditing = false
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+        else
+        {
+            let alert  = UIAlertController(title: "Warning", message: "You don't have camera", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    
+    func openGallery() {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary){
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.allowsEditing = true
+            imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+        else
+        {
+            let alert  = UIAlertController(title: "Warning", message: "You don't have permission to access gallery.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+}
+
+extension GalleryViewController : UIImagePickerControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let pickedImage = info[.originalImage] as? UIImage {
+            saveImage(imageName: UUID().uuidString, image: pickedImage)
+            imageArray.append(pickedImage)
+            self.myCollectionView.reloadData()
+        }
+        picker.dismiss(animated: true, completion: nil)
+    }
+}
+
 
