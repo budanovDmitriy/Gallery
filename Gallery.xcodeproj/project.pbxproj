@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C2F96C8281BC1E70052A883 /* UserDefaultKeyses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2F96C7281BC1E70052A883 /* UserDefaultKeyses.swift */; };
 		1C5D1C1F28181E3800D2DCC0 /* extension_AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5D1C1E28181E3800D2DCC0 /* extension_AuthViewController.swift */; };
 		1C5D1C25281826EA00D2DCC0 /* extension_Allert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5D1C24281826EA00D2DCC0 /* extension_Allert.swift */; };
 		1C5D1C272818306100D2DCC0 /* GalleryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5D1C262818306100D2DCC0 /* GalleryViewCell.swift */; };
+		1C71A00C281B220000538087 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1C71A00B281B220000538087 /* Alamofire */; };
 		1C82FF532816C38B0057B7AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C82FF522816C38B0057B7AD /* AppDelegate.swift */; };
 		1C82FF552816C38B0057B7AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C82FF542816C38B0057B7AD /* SceneDelegate.swift */; };
 		1C82FF5C2816C38C0057B7AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C82FF5B2816C38C0057B7AD /* Assets.xcassets */; };
@@ -18,9 +20,12 @@
 		1C82FF692816C4980057B7AD /* AuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C82FF672816C4980057B7AD /* AuthViewController.xib */; };
 		1C82FF6C2816C9B40057B7AD /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C82FF6A2816C9B30057B7AD /* GalleryViewController.swift */; };
 		1C82FF6D2816C9B40057B7AD /* GalleryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C82FF6B2816C9B40057B7AD /* GalleryViewController.xib */; };
+		3AF6B660E78DA7AB10FAA789 /* Pods_Gallery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1911519772984F17404DE7DD /* Pods_Gallery.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1911519772984F17404DE7DD /* Pods_Gallery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gallery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C2F96C7281BC1E70052A883 /* UserDefaultKeyses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultKeyses.swift; sourceTree = "<group>"; };
 		1C5D1C1E28181E3800D2DCC0 /* extension_AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension_AuthViewController.swift; sourceTree = "<group>"; };
 		1C5D1C24281826EA00D2DCC0 /* extension_Allert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension_Allert.swift; sourceTree = "<group>"; };
 		1C5D1C262818306100D2DCC0 /* GalleryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewCell.swift; sourceTree = "<group>"; };
@@ -34,6 +39,8 @@
 		1C82FF672816C4980057B7AD /* AuthViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthViewController.xib; sourceTree = "<group>"; };
 		1C82FF6A2816C9B30057B7AD /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		1C82FF6B2816C9B40057B7AD /* GalleryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GalleryViewController.xib; sourceTree = "<group>"; };
+		C52B2CB4C53087F26CD975DC /* Pods-Gallery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gallery.release.xcconfig"; path = "Target Support Files/Pods-Gallery/Pods-Gallery.release.xcconfig"; sourceTree = "<group>"; };
+		FE411F929A3A3ADA03C6537A /* Pods-Gallery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gallery.debug.xcconfig"; path = "Target Support Files/Pods-Gallery/Pods-Gallery.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,12 +48,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C71A00C281B220000538087 /* Alamofire in Frameworks */,
+				3AF6B660E78DA7AB10FAA789 /* Pods_Gallery.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07CC0B2EC8B7C4C53041C031 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FE411F929A3A3ADA03C6537A /* Pods-Gallery.debug.xcconfig */,
+				C52B2CB4C53087F26CD975DC /* Pods-Gallery.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		1C5D1C20281820E600D2DCC0 /* Gallery */ = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +107,8 @@
 			children = (
 				1C82FF512816C38B0057B7AD /* Gallery */,
 				1C82FF502816C38B0057B7AD /* Products */,
+				07CC0B2EC8B7C4C53041C031 /* Pods */,
+				9F6B099477F2964A54AC9DB9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,11 +127,28 @@
 				1C5D1C21281820FB00D2DCC0 /* Auth */,
 				1C5D1C20281820E600D2DCC0 /* Gallery */,
 				1C5D1C222818213100D2DCC0 /* Extensions */,
+				1C835D62281BF0DD00F37C4A /* UserDefaults */,
 				1C82FF5B2816C38C0057B7AD /* Assets.xcassets */,
 				1C82FF5D2816C38C0057B7AD /* LaunchScreen.storyboard */,
 				1C82FF602816C38C0057B7AD /* Info.plist */,
 			);
 			path = Gallery;
+			sourceTree = "<group>";
+		};
+		1C835D62281BF0DD00F37C4A /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				1C2F96C7281BC1E70052A883 /* UserDefaultKeyses.swift */,
+			);
+			path = UserDefaults;
+			sourceTree = "<group>";
+		};
+		9F6B099477F2964A54AC9DB9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1911519772984F17404DE7DD /* Pods_Gallery.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -121,15 +158,20 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1C82FF632816C38C0057B7AD /* Build configuration list for PBXNativeTarget "Gallery" */;
 			buildPhases = (
+				FA98716E05C2A4C32921A266 /* [CP] Check Pods Manifest.lock */,
 				1C82FF4B2816C38B0057B7AD /* Sources */,
 				1C82FF4C2816C38B0057B7AD /* Frameworks */,
 				1C82FF4D2816C38B0057B7AD /* Resources */,
+				935C13CBBF716FD26977C28C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Gallery;
+			packageProductDependencies = (
+				1C71A00B281B220000538087 /* Alamofire */,
+			);
 			productName = Gallery;
 			productReference = 1C82FF4F2816C38B0057B7AD /* Gallery.app */;
 			productType = "com.apple.product-type.application";
@@ -158,6 +200,9 @@
 				Base,
 			);
 			mainGroup = 1C82FF462816C38B0057B7AD;
+			packageReferences = (
+				1C71A00A281B220000538087 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 1C82FF502816C38B0057B7AD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -181,6 +226,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		935C13CBBF716FD26977C28C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Gallery/Pods-Gallery-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Gallery/Pods-Gallery-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Gallery/Pods-Gallery-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA98716E05C2A4C32921A266 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Gallery-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1C82FF4B2816C38B0057B7AD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -188,6 +275,7 @@
 			files = (
 				1C5D1C272818306100D2DCC0 /* GalleryViewCell.swift in Sources */,
 				1C82FF682816C4980057B7AD /* AuthViewController.swift in Sources */,
+				1C2F96C8281BC1E70052A883 /* UserDefaultKeyses.swift in Sources */,
 				1C5D1C25281826EA00D2DCC0 /* extension_Allert.swift in Sources */,
 				1C5D1C1F28181E3800D2DCC0 /* extension_AuthViewController.swift in Sources */,
 				1C82FF6C2816C9B40057B7AD /* GalleryViewController.swift in Sources */,
@@ -326,6 +414,7 @@
 		};
 		1C82FF642816C38C0057B7AD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE411F929A3A3ADA03C6537A /* Pods-Gallery.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -352,6 +441,7 @@
 		};
 		1C82FF652816C38C0057B7AD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C52B2CB4C53087F26CD975DC /* Pods-Gallery.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -398,6 +488,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1C71A00A281B220000538087 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1C71A00B281B220000538087 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1C71A00A281B220000538087 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1C82FF472816C38B0057B7AD /* Project object */;
 }
